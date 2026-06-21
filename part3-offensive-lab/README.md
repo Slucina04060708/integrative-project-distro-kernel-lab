@@ -74,6 +74,8 @@ Hosts prefixed with `p-` reside on or face the external Public zone, while hosts
    │                    └─────┬──────────┬─────┘                    │
    │                          │          │                          │
    └──────────────────────────┘          └──────────────────────────┘
+   ```
+
 
 # Section B
 
@@ -84,6 +86,7 @@ Hosts prefixed with `p-` reside on or face the external Public zone, while hosts
 To perform this technique from the Debian host, the following command was used against the responsive target:
 ```bash
 dirsearch -u [http://172.16.10.12:80](http://172.16.10.12:80)
+```
 
 ![Dirsearch Scan Results Part 1](../assets/documents/scan_result1.png)
 ![Dirsearch Scan Results Part 2](../assets/documents/scan_result2.png)
