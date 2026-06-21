@@ -88,8 +88,8 @@ To perform this technique from the Debian host, the following command was used a
 dirsearch -u [http://172.16.10.12:80](http://172.16.10.12:80)
 ```
 
-![Dirsearch Scan Results Part 1](assets/documents/scan_result1.png)
-![Dirsearch Scan Results Part 2](assets/documents/scan_result2.png)
+![Dirsearch Scan Results Part 1](../assets/documents/scan_result1.png)
+![Dirsearch Scan Results Part 2](../assets/documents/scan_result2.png)
 
 ### 2. What the technique does?
 
