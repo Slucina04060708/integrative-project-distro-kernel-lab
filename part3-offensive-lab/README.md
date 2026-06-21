@@ -36,7 +36,7 @@ Container shell context verification confirming administrative root access insid
 
 ## Lab Network Architecture
 
-This repository contains the technical topology specifications of the lab infrastructure, detailing the IP configurations and network segmentation mapping across public and corporate boundaries based on `image_4ec3c8.png`[cite: 3].
+This repository contains the technical topology specifications of the lab infrastructure, detailing the IP configurations and network segmentation mapping across public and corporate boundaries.
 
 ### 1. Addressing Table
 
@@ -52,3 +52,25 @@ This repository contains the technical topology specifications of the lab infras
 | **c-db-02** | *N/A* | `10.1.0.16` | Corporate Only |
 
 ---
+
+### 2. Two-Network Diagram
+
+Hosts prefixed with `p-` reside on or face the external Public zone, while hosts prefixed with `c-` are securely isolated within the internal Corporate network core. The systems p-web-02 and p-jumpbox-01 act as *Dual-Homed* bridges interconnecting both layers.
+
+```text
+       PUBLIC NETWORK (DMZ)                     CORPORATE NETWORK
+          172.16.10.0/24                          10.1.0.0/24
+   ┌──────────────────────────┐          ┌──────────────────────────┐
+   │                          │          │                          │
+   │  [p-web-01] .10          │          │          .13 [c-backup-01]
+   │                          │          │                          │
+   │  [p-ftp-01] .11          │          │          .14 [c-redis-01]  │
+   │                          │          │                          │
+   │                    ┌─────┴──────────┴─────┐    .15 [c-db-01]   │
+   │  Eth0: .12 ────────┤      p-web-02        ├──────── Eth1: .11  │
+   │                    └─────┬──────────┬─────┘    .16 [c-db-02]   │
+   │                    ┌─────┴──────────┴─────┐                    │
+   │  Eth0: .13 ────────┤    p-jumpbox-01      ├──────── Eth1: .12  │
+   │                    └─────┬──────────┬─────┘                    │
+   │                          │          │                          │
+   └──────────────────────────┘          └──────────────────────────┘
