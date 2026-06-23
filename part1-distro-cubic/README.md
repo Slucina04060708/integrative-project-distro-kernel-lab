@@ -18,3 +18,17 @@ sudo apt update
 sudo apt install cubic -y
 
 /home/pame/Descargas/WhatsApp Image 2026-06-22 at 6.45.48 PM.jpeg 
+
+--------------------------------------------------------
+2.- Base ISO selection and project naming
+--------------------------------------------------------
+The selection of the base image is a critical decision in the distribution construction process, as it determines the repository ecosystem,
+the default kernel version, and the overall stability of the final environment. For this project, we chose: Ubuntu 24.04 LTS as the foundation.
+
+This specific release was selected due to its long-term support (LTS) status, which ensures consistent security patching and a stable core that
+is essential for the security and networking experiments planned in the subsequent phases of this integrative project.
+
+After verifying the integrity of the ISO, we initialized the project with the identifier CapsaOS. This naming convention is not merely nominal;
+it defines the root environment within the Cubic workspace, where all subsequent system modifications, dependency installations, and configuration
+changes will be applied before the final squashfs compression.
+/home/pame/Imágenes/Capturas de pantalla/Captura desde 2026-06-22 23-05-47.png 
