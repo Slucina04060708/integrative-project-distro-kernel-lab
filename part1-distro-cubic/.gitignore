@@ -1,0 +1,7 @@
+custom-disk/
+custom-root/
+source-disk/
+*.img
+cubic.conf
+README.md.save
+.custom-root.lck
