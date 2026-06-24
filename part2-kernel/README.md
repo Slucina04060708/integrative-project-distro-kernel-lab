@@ -4,3 +4,6 @@ command to enter qemu: & "C:\Program Files\qemu\qemu-system-x86_64.exe" -cdrom d
 qemu working:
 ![alt text](image-1.png)
 ![alt text](image.png)
+
+qemu working now with 64 bits
+![alt text](image-2.png)
