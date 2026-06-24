@@ -4,7 +4,7 @@ This repository contains the full-stack development of our Integrative Project, 
 
 ---
 
-## Group Members & Roles
+# Group Members & Roles
 
 * **Pamela Stefania Toapanta Pila** — Part 1: Custom Distro Generation (Cubic)
 * **Camila Isabel Paucar Guaranda** — Part 2: 64-bit Kernel Architecture (Multiboot2/C)
@@ -12,15 +12,15 @@ This repository contains the full-stack development of our Integrative Project, 
 
 ---
 
-## How to Reproduce All 3 Parts
+# How to Reproduce All 3 Parts
 
 Below are the condensed execution frameworks to verify, each component of the project. Detailed structural breakdowns can be found inside the respective subfolder `README.md` files.
 
 ---
 
-### Part 1 — Build Your Distro with Cubic
+## Part 1 — Build Your Distro with Cubic
 
-#### Technical Specifications of the Test Environment (VM)
+### Technical Specifications of the Test Environment (VM)
 
 To ensure the correct execution and validation of *CapsaISO*, the virtualized environment must be configured with the following technical parameters:
 
@@ -54,7 +54,7 @@ To ensure the correct execution and validation of *CapsaISO*, the virtualized en
 
 *Note to the professor:* This configuration ensures that the boot process from the mounted CapsaISO-1.0-desktop-amd64.iso image and the verification of customizations (themes, wallpapers, and GSchema configurations) are performed efficiently, optimizing the experience within the system's "Live" session.
 
-### Part 2 — Development Environment Setup & Execution Guide
+## Part 2 — Development Environment Setup & Execution Guide
 
 This document provides the precise configuration steps and toolchain requirements to reproduce, compile, and emulate the custom 64-bit operating system kernel from scratch.
 
@@ -62,7 +62,7 @@ This document provides the precise configuration steps and toolchain requirement
 
 ---
 
-#### 1. System Prerequisites
+### 1. System Prerequisites
 
 Before initializing the build pipeline, ensure the following virtualization and containerization engines are installed and active on the host machine:
 * **Docker Desktop**: Required to orchestrate the isolated cross-compilation environment toolchain.
@@ -70,7 +70,7 @@ Before initializing the build pipeline, ensure the following virtualization and 
 
 ---
 
-#### 2. Dockerfile Infrastructure Configuration
+### 2. Dockerfile Infrastructure Configuration
 
 The environment definition file (Dockerfile) must be explicitly configured and placed inside the designated build management folder:
 
@@ -80,24 +80,24 @@ Path Target: part2-kernel/buildenv/Dockerfile
 
 ---
 
-#### 3. Execution Steps (Toolchain Compilation & Emulation)
+### 3. Execution Steps (Toolchain Compilation & Emulation)
 
-##### Step 1: Toolchain Image Compilation
+#### Step 1: Toolchain Image Compilation
 Launch your system terminal interface and execute the following command to assemble the reproducible compiler container image:
 
 docker build -t myos-buildenv .
 
-##### Step 2: Container Environment Workspace Mount
+#### Step 2: Container Environment Workspace Mount
 Run the compiled Docker build engine to mount your current repository root workspace directory. This cross-compiles the assembly headers, links the C files, and generates the bootable image file structures:
 
 docker run --rm -it -v ${PWD}:/root/env myos-buildenv
 
-##### Step 3: Container Disconnection Sequence
+#### Step 3: Container Disconnection Sequence
 Once the compiler script successfully terminates and outputs the definitive kernel binary assets inside the distribution layer, drop out of the containerized environment context back to your host terminal system:
 
-exit
+| exit
 
-##### Step 4: Virtualized Hardware Emulation via QEMU
+#### Step 4: Virtualized Hardware Emulation via QEMU
 Execute the system hypervisor emulator tool by explicitly mapping the exact operational path of the local executable engine. This reads the distribution manifest structure and boots the compiled system kernel profile:
 
 & "C:\Program Files\qemu\qemu-system-x86_64.exe" -cdrom dist/x86_64/kernel.iso
@@ -106,17 +106,17 @@ Execute the system hypervisor emulator tool by explicitly mapping the exact oper
 
 > **Windows / PowerShell Execution Note:** The execution command uses the call operator (&) and literal quotation marks to safely parse the default installation path under Microsoft Windows architectures. Ensure the target file 'dist/x86_64/kernel.iso' exists before calling the hypervisor hook.
 
-### Part 3 — Stand Up and Attack the Black Hat Bash Lab
+## Part 3 — Stand Up and Attack the Black Hat Bash Lab
 A containerized, multi-network offensive security lab architecture. This entire environment was deployed, tested, and audited within an isolated **Debian 13 (Trixie)** Virtual Machine. The project directory contains the complete verification logs, step-by-step documentation, and evidence metrics.
 
-#### Prerequisites
+### Prerequisites
 * Isolated Virtual Machine running **Debian 13 (Trixie)** or Kali Linux.
 * Hardware Resource Allocation: Minimum **4 GB RAM** and **40 GB Disk Space** configured for the guest OS.
 * **Docker** and **Docker Compose** toolchains installed and active inside the virtual machine.
 
-#### Execution Steps (Inside the Debian VM)
+### Execution Steps (Inside the Debian VM)
 
-##### Phase 1: Environment Setup & Docker Installation
+#### Phase 1: Environment Setup & Docker Installation
 
 **1.** Update the local system repositories:
 
@@ -156,7 +156,7 @@ A containerized, multi-network offensive security lab architecture. This entire 
 
 ---
 
-##### Phase 2: Lab Deployment & Orchestration
+#### Phase 2: Lab Deployment & Orchestration
 
 **10.** Clone the targeted official project framework codebase locally from GitHub:
 
@@ -176,7 +176,7 @@ A containerized, multi-network offensive security lab architecture. This entire 
 
 ---
 
-##### Phase 3: Verification & Network Auditing
+#### Phase 3: Verification & Network Auditing
 
 **14.** Execute the automated network validation profile to audit port states and confirm health metrics match deployment properties (*Lab is up*):
 
@@ -200,7 +200,7 @@ A containerized, multi-network offensive security lab architecture. This entire 
 
 ---
 
-##### Phase 4: Target Reconnaissance & Hacking Technique Execution
+#### Phase 4: Target Reconnaissance & Hacking Technique Execution
 
 **19.** Analyze the PORTS column from the global container infrastructure mapping to pinpoint active, public-facing HTTP entry vectors (discovering port 80 open on p-web-02):
 
