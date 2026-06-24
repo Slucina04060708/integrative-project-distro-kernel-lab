@@ -11,7 +11,7 @@ struct Char {
 struct Char* buffer = (struct Char*) 0xb8000;
 size_t col = 0;
 size_t row = 0;
-uint8_t fg_color = PRINT_COLOR_LIGHT_WHITE | (PRINT_COLOR_BLACK << 4);
+uint8_t fg_color = PRINT_COLOR_LIGHT_BLUE | (PRINT_COLOR_MAGENTA << 4);
 
 void clear_row(size_t row) {
    struct Char empty = (struct Char) {
@@ -62,7 +62,7 @@ void print_newline() {
 void print_char(char character) {
     if (character == '\n') {
         print_newline();
-        return
+        return;
     }
 
     if (col >= NUM_COLS) {
@@ -77,7 +77,7 @@ void print_char(char character) {
     col++;
 }
 
-void print_str(char* str) {
+void print_str(const char* str) {
     for (size_t i = 0; 1; i++) {
         char character = (uint8_t) str[i];
 
