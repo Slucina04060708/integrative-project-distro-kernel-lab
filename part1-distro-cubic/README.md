@@ -109,3 +109,16 @@ To ensure a cohesive and branded user experience, we enforced a custom system-wi
 
 /home/pame/Descargas/WhatsApp Image 2026-06-23 at 9.43.55 PM.jpeg 
 
+----------------------------------------------------------------------
+4.-System Packaging and Compression
+-----------------------------------------------------------------------
+To optimize the distribution and portability of CapsaISO, we carefully selected the compression methodology used during the ISO generation process.
+
+## Technical Choice: XZ Compression
+-Methodology: We utilized XZ (LZMA2) as the primary compression algorithm.
+-Justification: While alternative methods like gzip or lz4 offer faster compression times, xz was selected to achieve the highest possible
+ compression ratio.
+-Result: This choice minimizes the total disk image size, ensuring that the resulting ISO is efficient for storage and distribution, meeting the
+ project's requirement for optimized file size.
+
+/home/pame/Descargas/WhatsApp Image 2026-06-23 at 10.29.09 PM.jpeg 
