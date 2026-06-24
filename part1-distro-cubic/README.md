@@ -91,3 +91,21 @@ To ensure a standardized and productive user experience, we configured the /etc/
 
 /home/pame/Descargas/WhatsApp Image 2026-06-23 at 8.39.39 PM.jpeg 
 
+## *3.4 Default Desktop Environment Customization*
+To ensure a cohesive and branded user experience, we enforced a custom system-wide desktop theme via GSchema overrides. Instead of requiring users to manually change settings, we configured the environment to default to a 'Dark' color scheme and a standardized theme.
+
+# Technical Justification
+-System-wide Enforcement: By creating a .gschema.override file, we ensure that the desktop environment settings are hardcoded as the default for
+ all new users, overriding standard system defaults.
+-Non-Interactive Configuration: Using glib-compile-schemas during the build process ensures that the settings are pre-compiled and immediately
+ active upon the first login, providing a "ready-to-use" professional feel.
+
+# Implementation Procedure
+-Schema Override Creation: Developed an override file (01_capsaiso_defaults.gschema.override) defining preferred visual properties, including
+ the Yaru-dark theme and the system-wide 'Dark' color scheme.
+-Branding Integration: Integrated a custom wallpaper (capsa_fondo.jpg) as the default background, ensuring consistent group identity across all
+ user profiles.
+-Compilation: Compiled the schema definitions using glib-compile-schemas to register the custom visual defaults within the GNOME settings system.
+
+/home/pame/Descargas/WhatsApp Image 2026-06-23 at 9.43.55 PM.jpeg 
+
