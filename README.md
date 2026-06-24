@@ -14,7 +14,7 @@ This repository contains the full-stack development of our Integrative Project, 
 
 ## How to Reproduce All 3 Parts
 
-Below are the condensed execution frameworks to compile, verify, and run each component of the project. Detailed structural breakdowns can be found inside the respective subfolder `README.md` files.
+Below are the condensed execution frameworks to verify, each component of the project. Detailed structural breakdowns can be found inside the respective subfolder `README.md` files.
 
 ---
 
@@ -118,39 +118,39 @@ A containerized, multi-network offensive security lab architecture. This entire 
 
 **1.** Update the local system repositories:
 
-   sudo apt update
+    sudo apt update
 
 **2.** Install critical secure connection dependencies and encryption tools:
 
-   sudo apt install -y ca-certificates curl gnupg
+    sudo apt install -y ca-certificates curl gnupg
 
 **3.** Initialize the protected directory system layout for administrative repository keys:
 
-   sudo install -m 0755 -d /etc/apt/keyrings
+    sudo install -m 0755 -d /etc/apt/keyrings
 
 **4.** Download and import the official Docker GPG security verification key:
 
-   curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
 **5.** Set read permissions on the secure key file:
 
-   sudo chmod a+r /etc/apt/keyrings/docker.gpg
+    sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
 **6.** Dynamically detect the operating system distribution code name and register the stable production Docker repository source list channel:
 
-   echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    echo "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 **7.** Re-synchronize system indexes to incorporate the newly integrated package listings:
 
-   sudo apt update
+    sudo apt update
 
 **8.** Install the latest production stable builds for the Docker engine service, command-line interfaces, containerd runtimes, and the modern orchestration toolchain extensions:
 
-   sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin    |docker-compose-plugin
 
 **9.** Install the traditional GNU compilation script parser utility required for runtime execution automation scripts:
 
-   sudo apt install -y make
+    sudo apt install -y make
 
 ---
 
