@@ -32,3 +32,28 @@ After verifying the integrity of the ISO, we initialized the project with the id
 it defines the root environment within the Cubic workspace, where all subsequent system modifications, dependency installations, and configuration
 changes will be applied before the final squashfs compression.
 /home/pame/Imágenes/Capturas de pantalla/Captura desde 2026-06-22 23-05-47.png 
+
+---------------------------------------------------------------
+3.- IMPLEMENTATION OF CHANGES TO THE ISO STANDART
+---------------------------------------------------------------
+/*Software replacement: Transmission to qbitorrent/*
+
+In our pursuit of creating a specialized distribution focused on security and network efficiency, we evaluated the default P2P client, Transmission.
+While Transmission is lightweight, it lacks the advanced queue management and detailed network bandwidth control required for rigorous research environments.
+We decided to perform a replacement with qBittorrent.
+
+##Technical Justification
+-Feature Completeness: qBittorrent offers a more robust feature set, including an integrated search engine, advanced sequential downloading, and
+ detailed torrent prioritization, which are essential for managing large research datasets efficiently.
+-Stability and Performance: By utilizing the qBittorrent provides superior performance under high-load scenarios
+ compared to the default client.
+
+##Implementation Procedure
+The modification was executed within the chroot environment of the Cubic workspace:
+-Repository Update: Synchronized local package indices to ensure the latest stable version of qBittorrent was retrieved.
+-Deployment: Executed the installation via the standard apt package manager to ensure dependency integrity.
+-Removal: Purged the transmission-gtk and transmission-common packages to reduce the attack surface and remove redundant binaries.
+-Verification: Validated the installation via binary path identification.
+
+/home/pame/Descargas/WhatsApp Image 2026-06-23 at 7.37.50 PM.jpeg 
+
