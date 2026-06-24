@@ -58,6 +58,8 @@ To ensure the correct execution and validation of *CapsaISO*, the virtualized en
 
 This document provides the precise configuration steps and toolchain requirements to reproduce, compile, and emulate the custom 64-bit operating system kernel from scratch.
 
+> **Git Branch Warning:** The complete source code, dynamic configuration environments, and localized documentation for this section are maintained in a separate development branch named **feat/part2-kernel**.
+
 ---
 
 #### 1. System Prerequisites
