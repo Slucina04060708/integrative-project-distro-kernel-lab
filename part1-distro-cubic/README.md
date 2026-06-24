@@ -36,19 +36,19 @@ changes will be applied before the final squashfs compression.
 ---------------------------------------------------------------
 3.- IMPLEMENTATION OF CHANGES TO THE ISO STANDART
 ---------------------------------------------------------------
-/*1)Software replacement: Transmission to qbitorrent/*
+## *3.1)Software replacement: Transmission to qbitorrent*
 
 In our pursuit of creating a specialized distribution focused on security and network efficiency, we evaluated the default P2P client, Transmission.
 While Transmission is lightweight, it lacks the advanced queue management and detailed network bandwidth control required for rigorous research environments.
 We decided to perform a replacement with qBittorrent.
 
-## Technical Justification
+# Technical Justification
 -Feature Completeness: qBittorrent offers a more robust feature set, including an integrated search engine, advanced sequential downloading, and
  detailed torrent prioritization, which are essential for managing large research datasets efficiently.
 -Stability and Performance: By utilizing the qBittorrent provides superior performance under high-load scenarios
  compared to the default client.
 
-## Implementation Procedure
+# Implementation Procedure
 The modification was executed within the chroot environment of the Cubic workspace:
 -Repository Update: Synchronized local package indices to ensure the latest stable version of qBittorrent was retrieved.
 -Deployment: Executed the installation via the standard apt package manager to ensure dependency integrity.
@@ -57,11 +57,11 @@ The modification was executed within the chroot environment of the Cubic workspa
 
 /home/pame/Descargas/WhatsApp Image 2026-06-23 at 7.37.50 PM.jpeg 
 
-*3.2 Software Replacement: Celluloid to mpv*
+## *3.2 Software Replacement: Celluloid to mpv*
 To streamline our multimedia handling and minimize graphical dependencies in the background, we replaced the default Celluloid player with mpv.
 This transition is consistent with our design philosophy of prioritizing command-line efficiency and resource optimization.
 
-## Technical Justification
+# Technical Justification
 -Minimalist Architecture: mpv is renowned for its low overhead and lack of unnecessary GUI bloat, providing a direct and efficient rendering path
  for multimedia files.
 -Extensibility: Its design as a modular player allows for deeper integration with scripts and external automation tools, which is highly beneficial
@@ -69,9 +69,25 @@ This transition is consistent with our design philosophy of prioritizing command
 -Efficiency: By stripping away the GTK-based frontend of Celluloid, we reduce the total package footprint and the complexity of the media-handling
  stack.
 
-## Implementation Procedure
+# Implementation Procedure
 -Deployment: Installed mpv through the official distribution repositories to maintain system stability.
 -Removal: Purged celluloid to prevent package conflicts and ensure that only the leanest tools remain in the distribution image.
 -Verification: Validated the installation by checking the binary location.
 
 /home/pame/Descargas/WhatsApp Image 2026-06-23 at 8.02.58 PM.jpeg 
+
+## *3.3 Custom Environment Configuration: /etc/skel*
+To ensure a standardized and productive user experience, we configured the /etc/skel directory. This directory serves as the template for every new user account created on the system, guaranteeing that personal settings and directory structures are applied immediately upon account creation.
+
+# Technical Justification
+-User Provisioning: By pre-defining the directory structure (Desktop, Documents, Projects), we reduce the manual setup time for new users.
+-Standardization: The inclusion of an alias in .bashrc for package management (update) ensures that all users adopt best practices for system maintenance.
+-System Identity: The BIENVENIDA.txt file on the desktop provides an immediate identifier for the distribution’s customized nature.
+
+# Implementation Procedure
+-Structure Definition: Created standard workspace directories within /etc/skel.
+-Configuration Injection: Appended custom shell aliases to the skeletal .bashrc file to enhance terminal productivity.
+-Identity Branding: Placed a custom welcome document in the skeletal Desktop directory to acknowledge the system customization.
+
+/home/pame/Descargas/WhatsApp Image 2026-06-23 at 8.39.39 PM.jpeg 
+
