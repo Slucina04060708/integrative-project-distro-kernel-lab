@@ -30,8 +30,7 @@ is essential for the security and networking experiments planned in the subseque
 
 After verifying the integrity of the ISO, we initialized the project with the identifier CapsaOS. This naming convention is not merely nominal;
 it defines the root environment within the Cubic workspace, where all subsequent system modifications, dependency installations, and configuration
-changes will be applied before the final squashfs compression.
-![alt text](image.png)  
+changes will be applied before the final squashfs compression. 
 ![alt text](image-7.png) 
 
 ---------------------------------------------------------------
