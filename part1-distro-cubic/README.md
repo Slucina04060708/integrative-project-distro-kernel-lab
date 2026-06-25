@@ -17,7 +17,7 @@ sudo apt update
 ## Install the application
 sudo apt install cubic -y
 
-/home/pame/Descargas/WhatsApp Image 2026-06-22 at 6.45.48 PM.jpeg 
+![alt text](<WhatsApp Image 2026-06-22 at 6.45.42 PM.jpeg>) 
 
 --------------------------------------------------------
 2.- Base ISO selection and project naming
@@ -31,7 +31,8 @@ is essential for the security and networking experiments planned in the subseque
 After verifying the integrity of the ISO, we initialized the project with the identifier CapsaOS. This naming convention is not merely nominal;
 it defines the root environment within the Cubic workspace, where all subsequent system modifications, dependency installations, and configuration
 changes will be applied before the final squashfs compression.
-/home/pame/Imágenes/Capturas de pantalla/Captura desde 2026-06-22 23-05-47.png 
+![alt text](image.png)  
+![alt text](image-7.png) 
 
 ---------------------------------------------------------------
 3.- IMPLEMENTATION OF CHANGES TO THE ISO STANDART
@@ -55,7 +56,8 @@ The modification was executed within the chroot environment of the Cubic workspa
 -Removal: Purged the transmission-gtk and transmission-common packages to reduce the attack surface and remove redundant binaries.
 -Verification: Validated the installation via binary path identification.
 
-/home/pame/Descargas/WhatsApp Image 2026-06-23 at 7.37.50 PM.jpeg 
+![alt text](image-2.png)
+![alt text](image-3.png)
 
 ## *3.2 Software Replacement: Celluloid to mpv*
 To streamline our multimedia handling and minimize graphical dependencies in the background, we replaced the default Celluloid player with mpv.
@@ -74,7 +76,8 @@ This transition is consistent with our design philosophy of prioritizing command
 -Removal: Purged celluloid to prevent package conflicts and ensure that only the leanest tools remain in the distribution image.
 -Verification: Validated the installation by checking the binary location.
 
-/home/pame/Descargas/WhatsApp Image 2026-06-23 at 8.02.58 PM.jpeg 
+![alt text](image-4.png)
+![alt text](image-5.png)
 
 ## *3.3 Custom Environment Configuration: /etc/skel*
 To ensure a standardized and productive user experience, we configured the /etc/skel directory. This directory serves as the template for every new user account created on the system, guaranteeing that personal settings and directory structures are applied immediately upon account creation.
@@ -89,7 +92,7 @@ To ensure a standardized and productive user experience, we configured the /etc/
 -Configuration Injection: Appended custom shell aliases to the skeletal .bashrc file to enhance terminal productivity.
 -Identity Branding: Placed a custom welcome document in the skeletal Desktop directory to acknowledge the system customization.
 
-/home/pame/Descargas/WhatsApp Image 2026-06-23 at 8.39.39 PM.jpeg 
+![alt text](image-6.png) 
 
 ## *3.4 Default Desktop Environment Customization*
 To ensure a cohesive and branded user experience, we enforced a custom system-wide desktop theme via GSchema overrides. Instead of requiring users to manually change settings, we configured the environment to default to a 'Dark' color scheme and a standardized theme.
@@ -107,7 +110,7 @@ To ensure a cohesive and branded user experience, we enforced a custom system-wi
  user profiles.
 -Compilation: Compiled the schema definitions using glib-compile-schemas to register the custom visual defaults within the GNOME settings system.
 
-/home/pame/Descargas/WhatsApp Image 2026-06-23 at 9.43.55 PM.jpeg 
+![alt text](image-8.png) 
 
 ----------------------------------------------------------------------
 4.-System Packaging and Compression
@@ -121,4 +124,4 @@ To optimize the distribution and portability of CapsaISO, we carefully selected 
 -Result: This choice minimizes the total disk image size, ensuring that the resulting ISO is efficient for storage and distribution, meeting the
  project's requirement for optimized file size.
 
-/home/pame/Descargas/WhatsApp Image 2026-06-23 at 10.29.09 PM.jpeg 
+![alt text](image-9.png) 
