@@ -124,3 +124,6 @@ To optimize the distribution and portability of CapsaISO, we carefully selected 
  project's requirement for optimized file size.
 
 ![alt text](image-9.png) 
+
+# Link for download iso.- https://drive.google.com/file/d/1IaTxMu04jbQXAvvGFlrV7a8C9bRJvohV/view?usp=sharing 
+# Link for download checksum.- https://drive.google.com/file/d/12Ez1o8VBy8T7BMiAKdTb8T268azt2UEj/view?usp=sharing 
